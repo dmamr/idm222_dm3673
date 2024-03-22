@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dariya's Portfolio</title>
+  <style>
+    @media screen and (max-width: 700px) {
+      .introduction {
+        flex-direction: column;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      nav a {
+        float: none;
+        width: 100%;
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F2F2F2;
+      font-size: 125%;
+    }
+    header {
+      background-color: #F2F2F2;
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+    nav ul {
+      float: right;
+    }
+    nav ul li {
+      display: inline-block;      
+    }
+    nav ul li a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+      /* float: right; */
+    }
+    nav ul li a:hover {
+      background-color: #555;
+    }
+    .logo {
+      float: left;
+    }
+    .title {
+      animation: 1s ease-out 0s 1 fade-top;
+      background-color: #F2F2F2;
+      padding-left: 20%;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 65px;
+    }
+    .introduction {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .side {
+      animation: 1s ease-out 0s 1 fade-left;
+      flex: 45%;
+      background-color: #F2F2F2;
+      margin: auto;
+      padding-left: 5%;
+      font-size: 1.3rem;
+    }
+    .introtext {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    .introtext h2 {
+      font-size: 50px;
+      padding-left: 18.9%;
+    }
+    .main {
+      animation: 1s ease-out 0s 1 fade-right;
+      flex: 55%;
+      background-color: #F2F2F2;
+      padding: 10px;
+      text-align: left;
+    }
+    .main img {
+      width: 60%;
+      height: auto;
+      margin-left: 5rem;
+    }
+    .select-projects {
+      background-color: #EBEBEB;
+      padding: 25px;
+      font-size: 1.4rem;
+    }
+    .select-projects ul li {
+      list-style: none;
+      display: inline-block;
+    }
+    .select-projects ul img {
+      height: auto;
+      max-height: 200px;
+      padding-right: 50px;
+    }
+    .select-projects h2, ul, p {
+      padding-left: 19%;
+    }
+    .process {
+      padding: 25px;
+      font-size: 1.4rem;
+    }
+    .process h2, ol {
+      padding-left: 19%;  
+    }
+    .footer {    
+      padding: 20px;  
+      background-image: url(images/footer.jpg);
+      color: white;
+    }
+    .footer h3, h2 {
+      padding-left: 5%;
+    }
+    .footer a {
+      color: white;
+    }
+    .footer p {
+      padding-left: 40%;
+    }
+
+    .reveal {
+      position: relative;
+      opacity: 0;
+    }
+    .reveal.active {
+      opacity: 1;
+    }
+    .active.fade-top {
+      animation: fade-top 1s ease-in;
+    }
+    .active.fade-left {
+      animation: fade-left 1s ease-in;
+    }
+    .active.fade-right {
+      animation: fade-right 1s ease-in;
+    }
+    @keyframes fade-top {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes fade-left {
+      0% {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @keyframes fade-right {
+      0% {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo" width="50" height="50">
+      </a>
+      </div>
+      <ul id="menu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">selected projects</a></li>
+      </ul> 
+    </nav>
+  </header>
+  <div class="title">
+    <p>PORTFOLIO</p>
+  </div>
+  <div class="introduction">
+    <div class="side">
+      <div class="introtext">
+        <p><b>RIYA MAMRATOVA</b></p>
+        <h2>multimedia designer</h2>
+        <p>
+          hello there! :) 
+        <br>
+        <br>
+          I am Riya – a hardworking, fast-learning, ambitious girl from Kazakhstan fully committed to a creative field. 
+        <br>  
+        <br>
+          I am passionate about visual communication & experimentation with emerging media to inspire and impact the modern community.
+        </p>
+      </div> 
+    </div>
+    <div class="main">
+      <div id="dariya">
+        <img src="images/dariya.jpg" alt="dariya" width="750px" height="1000px">
+      </div>
+    </div>
+  </div>
+  <div class="select-projects reveal fade-left">
+    <h2><u>select projects</u></h2>
+    <ul>
+      <li><img src="images/selectproj1.png" alt="selectproj1"></li>
+      <li><img src="images/selectproj2.png" alt="selectproj2"></li>
+      <li><img src="images/selectproj3.jpg" alt="selectproj3"></li>
+      <li><img src="images/selectproj4.png" alt="selectproj4"></li>
+    </ul>
+    <br>
+    <p>
+      <b>Aroma Soap</b> (Aug, ‘23) – branding development<br>
+      <b>GFG Philadelphia</b> (Nov - Jan, ‘22 - ‘23) - website redesign<br>
+      <b>Saint Petersburg Essential</b> (Aug, ‘23) - photography<br>
+      <b>Sadchikovskoe milk company</b> (Jul - Aug, ‘23) - social media marketing
+    </p>
+  </div>
+  <div class="process reveal fade-left">
+    <h2><u>process</u></h2>
+    <div class="steps">
+      <ol type="1">
+        <li><b>Brief</b> - fill in the brief as detailed as possible to get the result you anticipate.</li>
+        <li><b>Research</b> - competitive and visual analysis, target audience and market research.</li>
+        <li><b>Visual map</b> - gathering references to matchthe visuals in your imagination.</li>
+        <li><b>Prototype</b> - designing the logical structureand layout of the project.</li>
+        <li><b>Development</b> - final appearance of the product.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="footer">
+    <h3>RIYA MAMRATOVA</h3>
+    <h2><a href = "mailto:dariyamamratova@gmail.com">dariyamamratova@gmail.com</a></h2>
+    <div class="socials">
+      <p>
+        <a href = "https://www.instagram.com/riushada">Instagram</a>,
+        <a href = "mailto:dariyamamratova@gmail.com">Email</a>,
+        <a href = "https://www.linkedin.com/in/riushada/">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

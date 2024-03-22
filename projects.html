@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dariya's Portfolio</title>
+  <style>
+    @media screen and (max-width: 700px) {
+      .projects-container {
+        flex-direction: column;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      nav a {
+        float: none;
+        width: 100%;
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FBFBFB;
+      font-size: 125%;
+      justify-items: center;
+    }
+    header {
+      background-color: #FBFBFB;
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+    nav ul {
+      float: right;
+    }
+    nav ul li {
+      display: inline-block;      
+    }
+    nav ul li a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+      /* float: right; */
+    }
+    nav ul li a:hover {
+      background-color: #555;
+    }
+    .logo {
+      float: left;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    #aromasoap, #unleashyourself {
+      animation: 0.5s ease-out 0s 1 fade-bottom;
+    }
+    .projects-container {
+      max-width: 75rem;
+      margin-inline: auto;
+      padding-inline: 2rem;
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 2.5rem;
+
+    }
+    .project {
+      aspect-ratio: 1 / 1.5;
+    }
+    .project img {
+      width: 100%;
+      aspect-ratio: 1.5 / 1;
+      object-fit: cover;
+      box-shadow: 0 .125rem 1rem rgb(0 0 0 / .3);
+    }
+    .project-text {
+      background: white;
+      align-self: end;
+      margin: .5rem .5rem 10rem;
+      padding: .5rem;
+      box-shadow: 0 .25rem 1rem rgb(0 0 0 / .2);
+      font-size: 1.35rem;
+    }
+
+    .footer {    
+      padding: 20px;  
+      background-image: url(images/footer.jpg);
+      color: white;
+    }
+    .footer h3, h2 {
+      padding-left: 5%;
+    }
+    .footer a {
+      color: white;
+    }
+    .footer p {
+      padding-left: 40%;
+    }
+    
+    .reveal {
+      position: relative;
+      opacity: 0;
+    }
+    .reveal.active {
+      opacity: 1;
+    }
+    .active.fade-bottom {
+      animation: fade-bottom 0.5s ease-in;
+    }
+    .active.fade-left {
+      animation: fade-left 0.5s ease-in;
+    }
+    .active.fade-right {
+      animation: fade-right 0.5s ease-in;
+    }
+    @keyframes fade-bottom {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes fade-left {
+      0% {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @keyframes fade-right {
+      0% {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Logo" width="50" height="50">
+        </a>
+      </div>
+      <ul id="menu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="projects.html">selected projects</a></li>
+      </ul> 
+    </nav>
+  </header>
+  <br>
+  <br>
+  <div class="projects-container">
+    <div class="projects-grid">
+      <div class="project" id="aromasoap">
+        <img src="images/aromasoap.png" alt="aromasoap">
+        <div class="project-text">
+          <p>
+            <b>Aroma Soap (Aug '23)</b>
+            <br><br>
+            <em>Branding. Software: Adobe Illustrator, Photoshop.</em>
+            <br><br>
+            Aroma Soap is a small business selling handmade candles, soaps, and SPA boxes based in Kostanay, Kazakhstan. The client wanted to rebrand the whole business. The project included a variety of creative aspects, such as logo design, packaging redesign, 
+            poster production, and the establishment of a unified 
+            brand identity.
+          </p>
+        </div>
+      </div>
+      <div class="project" id="unleashyourself">
+        <img src="images/unleashyourself.png" alt="unleashyourself">
+        <div class="project-text">
+          <p>
+            <b>Unleash yourself (July ‘22)</b>
+            <br><br>
+            <em>A4 Paper Posters. Software: Adobe Illustrator, Photoshop. Captured on: iPhone 11 Pro.</em>
+            <br><br>
+            An eating disorder has irreversible repercussions on lives. Yet, it is not customary to speak about it to a vast audience in my country. I was eager to stop the silence and raise awareness of such an acute problem. 
+            I strived to prevent people from committing my mistakes. And when the concept took shape in my head, 
+            I started its realization.
+          </p>
+        </div>
+      </div>
+      <div class="project reveal fade-bottom">
+        <img src="images/greekfromgreece.png" alt="greekfromgreece">
+        <div class="project-text">
+          <p>
+            <b>Greek from Greece (Nov - Feb ‘22 - ‘23)</b>
+            <br><br>
+            <em>Web design. Software: Figma.</em>
+            <br><br>
+            “Greek from Greece” is a restaurant with Greek cuisine based in Philadelphia, PA. Their website was a little intimidating (buttons’ abundance) and old-fashioned, so I redesigned it as a part of my university project. I conducted a full analysis of the target audience, opponents’ websites, and their current website prior to creating my own representation.
+          </p>
+        </div>
+      </div>
+      <div class="project reveal fade-bottom">
+        <img src="images/interbrokerkostanay.png" alt="interbrokerkostanay">
+        <div class="project-text">
+          <p>
+            <b>InterBroker Kostanay (Jan - May ‘22)</b>
+            <br><br>
+            <em>Website. Programming languages used: HTML, CSS, JavaScript.</em>
+            <br><br>
+            “InterBroker Kostanay” is an organization that deals with the customs declaration of the goods either imported to or exported out of Kazakhstan. The website was designed to solve the main problem of the business – the inability to attract potential clients and coworkers.
+        </p>
+        </div>
+      </div>
+      <div class="project reveal fade-bottom">
+        <img src="images/saintspetersburg.jpg" alt="saintspetersburg">
+        <div class="project-text">
+          <p>
+            <b>Saint Petersburg Essentials (Aug ‘23)</b>
+            <br><br>
+            <em>Captured on: Canon EOS Rebet T7.</em>
+            <br><br>
+            When you grow older, trips with your parents take on new colors. You observe what's happening around you from a fresh perspective, absorbing as many images as possible. Antique buildings in the Baroque style stand tall on the wide streets of St. Petersburg. Threads are stretched between the lampposts, and beneath them, cars speed by while pedestrians walk confidently—everyone is in a hurry somewhere. Amidst this hustle and bustle, you can distinguish the tourists leisurely strolling and looking around in an attempt to soak in the city's energy. This collection of photographs was created as a memory of a warm trip organized by my parents.
+        </p>
+        </div>
+      </div>
+      <div class="project reveal fade-bottom">
+        <img src="images/afterdark.jpg" alt="afterdark">
+        <div class="project-text">
+          <p>
+            <b>After Dark (Oct ‘22)</b>
+            <br><br>
+            <em>Captured on: Canon EOS Rebet T7.</em>
+            <br><br>
+            The following project was created during my Photography class. This collection keeps warm cherished memories of comforting conversations during an evening walk on campus with my close friends.
+        </p>
+        </div>
+      </div>
+      <div class="project reveal fade-bottom">
+        <img src="images/sadchikovskoe.png" alt="sadchikovskoe">
+        <div class="project-text">
+          <p>
+            <b>“Sadchikovskoe” company (Jul - Aug ‘23)</b>
+            <br><br>
+            <em>Software used: Capcut, Studio, Adobe Photoshop. Devices used: iPhone 11, Canon EOS Rebel T7</em>
+            <br><br>
+            “Sadchikovskoe” - is one of the biggest local Kostanay milk companies. Working as an SMM manager, I was responsible for content planning, designing stories and publications, photoshoots, video making and blog post writing.
+          </p>
+        </div>
+      </div>
+      <div class="project reveal fade-bottom">
+        <img src="images/sanseven.png" alt="sanseven">
+        <div class="project-text">
+          <p>
+            <b>“San Seven” burger chain (Jul - Aug ‘23)</b>
+            <br><br>
+            <em>Software used: Capcut, Studio, Adobe Photoshop. Devices used: iPhone 11, Canon EOS Rebel T7</em>
+            <br><br>
+            “San Seven” - is a burger chain transitioning into a media portal located in three Kazakhstani cities (Kostanay, Petropavl, Aktobe). Working for them, my responsibilities included content planning, data analysis and research, designing stories and publications, photoshoots, and blog post writing.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <h3>RIYA MAMRATOVA</h3>
+    <h2><a href = "mailto:dariyamamratova@gmail.com">dariyamamratova@gmail.com</a></h2>
+    <div class="socials">
+      <p>
+        <a href = "https://www.instagram.com/riushada">Instagram</a>,
+        <a href = "mailto:dariyamamratova@gmail.com">Email</a>,
+        <a href = "https://www.linkedin.com/in/riushada/">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
