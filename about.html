@@ -13,9 +13,17 @@
     @media screen and (max-width: 400px) {
       nav a {
         float: none;
-        width: 100%;
+        width: 100%
       }
     }
+
+    @media screen and (max-width: 740px) {
+      .reveal {
+        right: 20%;
+      }
+    }
+
+
     * {
       box-sizing: border-box;
     }
@@ -51,9 +59,17 @@
       float: left;
     }
 
+    #menu {
+      position: relative;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+
     .about {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 10%;
       padding: 25px;
     }
     .side {
@@ -111,6 +127,7 @@
     .reveal {
       position: relative;
       opacity: 0;
+      right: 20%;
     }
     .reveal.active {
       opacity: 1;

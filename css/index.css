@@ -10,6 +10,14 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 740px) {
+  p {
+    width: auto;
+    transform: translateX(-10%);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
